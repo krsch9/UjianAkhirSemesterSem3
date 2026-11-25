@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 type Konteks = { params: Promise<{ id: string }> };
 
 export async function GET(_request: Request, { params }: Konteks) {
-    const { id } = await params; // Wajib await di Next.js 15+
+    const { id } = await params;
     const nomorId = Number(id);
 
     if (!Number.isInteger(nomorId)) {
@@ -24,7 +24,7 @@ export async function GET(_request: Request, { params }: Konteks) {
 }
 
 export async function DELETE(_request: Request, { params }: Konteks) {
-    const { id } = await params; // Wajib await
+    const { id } = await params;
     const nomorId = Number(id);
 
     if (!Number.isInteger(nomorId)) {

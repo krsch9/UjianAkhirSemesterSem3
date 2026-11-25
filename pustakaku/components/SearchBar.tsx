@@ -10,7 +10,7 @@ export default function SearchBar({ defaultCari = "" }: SearchBarProps) {
                 name="cari"
                 defaultValue={defaultCari}
                 placeholder="Cari judul atau penulis"
-                className="w-full max-w-md rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                className="w-full max-w-md rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:border-gray-900 focus:outline-none"
             />
             <button
                 type="submit"
