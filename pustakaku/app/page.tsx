@@ -12,9 +12,8 @@ export default function LandingPage() {
       </p>
 
       <p className="mt-4 max-w-lg text-sm leading-relaxed text-gray-600 sm:text-base">
-        Selamat datang di layanan perpustakaan digital sekolah! Kamu dapat melihat
-        koleksi buku yang tersedia, memeriksa jumlah stok secara langsung, serta
-        melakukan peminjaman buku dengan lebih mudah dan praktis.
+        Selamat datang di PustakaKu! Kamu dapat melihat koleksi buku yang
+        tersedia dan memeriksa jumlah stok secara langsung.
       </p>
 
       <div className="mt-8">

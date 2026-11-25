@@ -14,7 +14,6 @@ export default function BookForm() {
 
     return (
         <form action={formAction} className="space-y-4">
-            {/* Input Judul */}
             <div>
                 <label htmlFor="judul" className="block text-sm font-medium text-gray-800">
                     Judul <span className="text-red-600">*</span>
@@ -25,14 +24,13 @@ export default function BookForm() {
                     type="text"
                     placeholder="Judul buku"
                     defaultValue={state.values?.judul}
-                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-900 focus:outline-none"
                 />
                 {state.galat?.judul && (
                     <p className="mt-1 text-xs text-red-600">{state.galat.judul}</p>
                 )}
             </div>
 
-            {/* Input Penulis */}
             <div>
                 <label htmlFor="penulis" className="block text-sm font-medium text-gray-800">
                     Penulis <span className="text-red-600">*</span>
@@ -43,14 +41,13 @@ export default function BookForm() {
                     type="text"
                     placeholder="Nama penulis"
                     defaultValue={state.values?.penulis}
-                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-900 focus:outline-none"
                 />
                 {state.galat?.penulis && (
                     <p className="mt-1 text-xs text-red-600">{state.galat.penulis}</p>
                 )}
             </div>
 
-            {/* Select Kategori */}
             <div>
                 <label htmlFor="kategori" className="block text-sm font-medium text-gray-800">
                     Kategori <span className="text-red-600">*</span>
@@ -59,7 +56,7 @@ export default function BookForm() {
                     id="kategori"
                     name="kategori"
                     defaultValue={state.values?.kategori ?? ""}
-                    className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm text-gray-700 focus:border-gray-900 focus:outline-none"
+                    className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm text-gray-900 focus:border-gray-900 focus:outline-none"
                 >
                     <option value="" disabled>
                         Pilih kategori
@@ -75,7 +72,6 @@ export default function BookForm() {
                 )}
             </div>
 
-            {/* Baris 2 Kolom: Tahun Terbit & Jumlah Stok */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                     <label htmlFor="tahunTerbit" className="block text-sm font-medium text-gray-800">
@@ -87,7 +83,7 @@ export default function BookForm() {
                         type="number"
                         placeholder="2005"
                         defaultValue={state.values?.tahunTerbit}
-                        className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                        className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-900 focus:outline-none"
                     />
                     {state.galat?.tahunTerbit && (
                         <p className="mt-1 text-xs text-red-600">{state.galat.tahunTerbit}</p>
@@ -105,7 +101,7 @@ export default function BookForm() {
                         min={0}
                         placeholder="5"
                         defaultValue={state.values?.stokTotal}
-                        className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                        className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-900 focus:outline-none"
                     />
                     {state.galat?.stokTotal && (
                         <p className="mt-1 text-xs text-red-600">{state.galat.stokTotal}</p>
@@ -113,7 +109,6 @@ export default function BookForm() {
                 </div>
             </div>
 
-            {/* Textarea Deskripsi */}
             <div>
                 <label htmlFor="deskripsi" className="block text-sm font-medium text-gray-800">
                     Deskripsi
@@ -124,16 +119,14 @@ export default function BookForm() {
                     rows={3}
                     placeholder="Deskripsi buku"
                     defaultValue={state.values?.deskripsi}
-                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm focus:border-gray-900 focus:outline-none"
+                    className="mt-1 w-full rounded-lg border border-gray-300 px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-900 focus:outline-none"
                 />
             </div>
 
-            {/* Pesan Error Global jika ada */}
             {state.pesan && !state.sukses && (
                 <p className="text-sm text-red-600">{state.pesan}</p>
             )}
 
-            {/* Tombol Aksi: Batal di kiri, Simpan di kanan */}
             <div className="flex items-center justify-between pt-2">
                 <Link
                     href="/buku"
