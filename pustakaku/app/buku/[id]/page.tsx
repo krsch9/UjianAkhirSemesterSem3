@@ -30,7 +30,6 @@ async function KontenDetailBuku({
             <div className="flex h-56 w-40 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-sm font-medium text-gray-500">
                 Sampul
             </div>
-
             <div className="flex-1">
                 <h1 className="text-2xl font-bold text-gray-900">{buku.judul}</h1>
 
