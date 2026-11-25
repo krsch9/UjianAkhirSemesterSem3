@@ -44,7 +44,6 @@ export async function tambahBuku(
         deskripsi,
     };
 
-    // 1. Validasi Input
     const galat: NonNullable<BookFormState["galat"]> = {};
     if (!judul) galat.judul = "Judul wajib diisi";
     if (!penulis) galat.penulis = "Penulis wajib diisi";
@@ -69,7 +68,6 @@ export async function tambahBuku(
         };
     }
 
-    // 2. Simpan ke SQLite via Prisma
     try {
         await prisma.buku.create({
             data: {
@@ -77,7 +75,7 @@ export async function tambahBuku(
                 penulis,
                 kategori,
                 tahunTerbit,
-                stokTersedia: stokTotal, // Saat buku baru ditambah, stok tersedia = stok total
+                stokTersedia: stokTotal,
                 stokTotal,
                 deskripsi: deskripsi || null,
             },
@@ -90,7 +88,6 @@ export async function tambahBuku(
         };
     }
 
-    // 3. Refresh daftar buku & pindah halaman (wajib di luar try/catch)
     revalidatePath("/buku");
     redirect("/buku");
 }

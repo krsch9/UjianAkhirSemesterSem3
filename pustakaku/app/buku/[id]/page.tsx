@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound } from "next/navigation"
 import { Suspense } from "react";
 import { prisma } from "@/lib/prisma";
 
@@ -9,8 +9,8 @@ async function KontenDetailBuku({
     params: Promise<{ id: string }>;
 }) {
     const { id } = await params;
-    const nomorId = Number(id);
 
+    const nomorId = Number(id);
     if (!Number.isInteger(nomorId)) {
         notFound();
     }
@@ -27,12 +27,10 @@ async function KontenDetailBuku({
 
     return (
         <div className="mt-6 flex flex-col gap-8 rounded-xl border border-gray-200 bg-white p-6 sm:flex-row sm:p-8">
-            {/* Placeholder Sampul di Kiri sesuai Mockup */}
             <div className="flex h-56 w-40 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-sm font-medium text-gray-500">
                 Sampul
             </div>
 
-            {/* Informasi Detail di Kanan */}
             <div className="flex-1">
                 <h1 className="text-2xl font-bold text-gray-900">{buku.judul}</h1>
 
